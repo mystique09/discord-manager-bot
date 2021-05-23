@@ -14,12 +14,21 @@ class KickCommand extends Command {
           key: 'member', 
           prompt: 'Who would you like to kick?', 
           type: 'member',
+        }, {
+          key: 'reason', 
+          prompt: 'Provide a reason.',
+          type: 'string'
         }]
     });
   }
   
-  run(message, {member}){
-    message.say('You are kicked from the server!')
+  async run(message, {member, reason}){
+    try {
+      const kicked = await member.kick(reason);
+      message.say(`Successfully kicked ${member.user.tag}.`);
+    } catch (e) {
+      message.say(`You don't have the permission.`);
+    }
   }
 }
 
