@@ -9,7 +9,7 @@ class MeowCommand extends Command {
       memberName: 'meow', 
       description: 'Replies with a meow.', 
       throttling: {
-        usages: 2,
+        usages: 1,
         duration: 10,
       }
     });
