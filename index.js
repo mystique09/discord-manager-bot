@@ -26,7 +26,7 @@ client.registry
 
 client.once('ready', ()=> {
   console.log(`Logged in as ${client.user.tag}! (${client.user.id})`);
-  client.user.setActivity('with DiscordBot Manager.');
+  client.user.setActivity(`Playing with my own feelings, she doesn't like me :sob:`);
 });
 
 client.on('guildMemberAdd', (member)=> {

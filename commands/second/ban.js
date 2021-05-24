@@ -34,7 +34,7 @@ class BanCommand extends Command {
         return;
       }
     }catch(e){
-      message.say(`You don't have the permission.`);
+      message.reply(`Unable to ban ${member_tag}.`);
     }
   }
 }
