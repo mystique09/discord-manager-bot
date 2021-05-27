@@ -7,7 +7,7 @@ const {
 } = require('./config.json');
 
 const client = new CommandoClient({
-  commandPrefix: '.',
+  commandPrefix: '>',
   owner: '387156607059886083',
   invite: ''
 });
@@ -26,7 +26,7 @@ client.registry
 
 client.once('ready', ()=> {
   console.log(`Logged in as ${client.user.tag}! (${client.user.id})`);
-  client.user.setActivity(`Playing with my own feelings, she doesn't like me :sob:`);
+  client.user.setActivity(`Playing with my own feelings, she doesn't like me 😭`);
 });
 
 client.on('guildMemberAdd', (member)=> {
