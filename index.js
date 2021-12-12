@@ -26,26 +26,12 @@ client.registry
 
 client.once('ready', ()=> {
   console.log(`Logged in as ${client.user.tag}! (${client.user.id})`);
-  client.user.setActivity(`Playing with my own feelings, she doesn't like me 😭`);
+  client.user.setActivity(`Void at your service 🌝`);
 });
 
-client.on('guildMemberAdd', (member)=> {
-  const memberLogChannel = member.guild.channels.cache.find(channel => channel.name === 'member-logs');
+client.on('guildMemberAdd', onAddMember);
 
-  if (!memberLogChannel) return;
-  
-  memberLogChannel.send(`Welcome to the server <@${member.user.id}>!`);
-  const normalRole = member.guild.roles.cache.find(role => role.name === 'Member');
-  member.roles.add(normalRole);
-});
-
-client.on('guildMemberRemove', (member)=> {
-  const serverLog = member.guild.channels.cache.find(channel => channel.name === 'server-logs');
-
-  if(!serverLog) return;
-  serverLog.send(`${member.user.tag} left the server.`);
-  return;
-});
+client.on('guildMemberRemove', onRemoveMember);
 
 client.on('error', console.error);
 
